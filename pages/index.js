@@ -61,6 +61,7 @@ const Index = () => {
           align-items: center;
           justify-content: center;
           height: 100vh;
+          padding: 50px 0;
         }
 
         h1 {

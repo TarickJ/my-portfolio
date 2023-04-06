@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
 
         main {
           flex: 1;
+          margin-bottom: 60p
         }
 
         

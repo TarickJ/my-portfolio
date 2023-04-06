@@ -70,10 +70,14 @@ const Contact = () => {
           <p>Phone:</p> <a href="tel:+0607208937">0607208937</a>
           <div className="social-links">
             <Link href="https://www.linkedin.com/in/tarick-joseph-2b577a270/" legacyBehavior>
-              <a target="_blank"><Linkedin /></a>
+              <div>
+                <a target="_blank"><Linkedin /></a>
+              </div>
             </Link>
             <Link href="https://github.com/TarickJ" legacyBehavior>
-              <a target="_blank"><GitHub /></a>
+              <div>
+                <a target="_blank"><GitHub /></a>
+              </div>
             </Link>
           </div>
         </div>
