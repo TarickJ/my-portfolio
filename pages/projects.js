@@ -5,6 +5,7 @@ import Image from 'next/image'; // Component for image optimization
 import itunesPic from '../public/Img/itunes.png'; // Image for project 1
 import memoryPic from '../public/Img/memory.png'; // Image for project 2
 import sneakerPic from '../public/Img/sneaker.png'; // Image for project 3
+import pokemonPic from '../public/Img/pokemon.png'; // Image for project 4
 
 // Creating a functional component for the Projects page
 const Projects = () => {
@@ -70,6 +71,25 @@ const Projects = () => {
               <p>A simple e-commerce web application that allows users to purchase sneakers.</p>
               <div className="project-links">
                 <Link href="https://github.com/TarickJ/Sneakerstore-capstone" legacyBehavior><a className="project-link">Github Repo</a></Link>
+              </div>
+            </div>
+          </div>
+          <div className="project">
+            <div className="project-image">
+              <Image
+                src={pokemonPic}
+                alt="Project 3"
+                height="300"
+                width="300"
+                className="project-image-round"
+              />
+            </div>
+            <div className="project-details">
+              <h2>Pokedex</h2>
+              <p>A Pokedex that display's the pokemon from the original series.</p>
+              <div className="project-links">
+                <Link href="https://pokemon-next-js-six.vercel.app/" legacyBehavior><a className="project-link">Live Demo</a></Link>
+                <Link href="https://github.com/TarickJ/pokemon-next.js" legacyBehavior><a className="project-link">Github Repo</a></Link>
               </div>
             </div>
           </div>
