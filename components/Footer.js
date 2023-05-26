@@ -14,13 +14,17 @@ const Footer = () => {
             <h4>Links</h4>
             <ul>
               <li>
-                <Link href="https://www.linkedin.com/in/tarick-joseph-2b577a270/" legacyBehavior> {/* use Link component to wrap the LinkedIn link */}
-                  <a><Linkedin /> Linkedin</a> {/* render the Linkedin icon and text */}
+                <Link href="https://www.linkedin.com/in/tarick-joseph-2b577a270/" legacyBehavior>
+                  <div>
+                    <a target="_blank"><Linkedin /></a>
+                  </div>
                 </Link>
               </li>
               <li>
-                <Link href="https://github.com/TarickJ" legacyBehavior> {/* use Link component to wrap the Github link */}
-                  <a><GitHub /> Github</a> {/* render the Github icon and text */}
+                <Link href="https://github.com/TarickJ" legacyBehavior>
+                  <div>
+                    <a target="_blank"><GitHub /></a>
+                  </div>
                 </Link>
               </li>
             </ul>
@@ -35,13 +39,13 @@ const Footer = () => {
       <style jsx>{`
         footer {
           background-color: rgba(255, 196, 0, 0.831);
-          padding: 10px 5px;
+          padding: 5px;
         }
 
         .footer-content {
           display: flex;
           justify-content: space-between;
-          padding: 5px;
+          padding: 10px;
         }
 
         .footer-col {
@@ -50,16 +54,15 @@ const Footer = () => {
         }
 
         h4 {
-          font-size: 20px;
-          font-weight: 600;
-          margin-bottom: 20px;
+          font-size: 18px;
+          margin-bottom: 10px;
           color: #292929;
         }
 
         p {
-          font-size: 14px;
+          font-size: 12px;
+          margin-bottom: 5px;
           line-height: 1.6;
-          margin-bottom: 15px;
           color: #6c6c6c;
         }
 
@@ -70,7 +73,7 @@ const Footer = () => {
         }
 
         li {
-          margin-bottom: 10px;
+          margin-bottom: 5px;
           color: rgba(255, 196, 0, 0.831);
         }
 
