@@ -1,15 +1,17 @@
-import Layout from "../components/Layout";  // import the Layout component
-import Link from "next/link";  // import the Link component from Next.js
-import { Info, Package, Phone } from 'react-feather';  // import icons from react-feather library
+import Layout from "../components/Layout";
+import Link from "next/link";
+import { Info, Package, Phone } from 'react-feather';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const Index = () => {
-  const pages = [  // define an array of objects representing the pages of the portfolio
+  const pages = [
     {
       id: 1,
-      title: 'About',  // title of the page
-      description: 'Learn more about our company',  // brief description of the page
-      url: '/about',  // url to navigate to the page
-      icon: <Info size={24} />  // icon to display alongside the page title
+      title: 'About',
+      description: 'Learn more about our company',
+      url: '/about',
+      icon: <Info size={24} />
     },
     {
       id: 2,
@@ -25,96 +27,109 @@ const Index = () => {
       url: '/contact',
       icon: <Phone size={24} />
     }
-  ];  
+  ];
 
   return (
     <Layout>
-      {/* use the Layout component to provide a common structure for all pages */}
       <div className="container">
         <h1>Welcome to My Portfolio</h1>
         <p className="description">
-          I am a new web developer finishing off my bootcamp, feel free to explore my portfolio .
+          I am a new web developer finishing off my bootcamp, feel free to explore my portfolio.
         </p>
-        <div className="page-previews">
-          {pages.map((page) => (
-            <div className="page-preview-details" key={page.id}>
-              <div className="page-preview-header">
-                {page.icon}
-                {/* display the icon for the page */}
-                <h2>{page.title}</h2>
-                {/* display the title of the page */}
+        <div className="carousel-wrapper">
+          <Carousel showThumbs={false} infiniteLoop={true} showStatus={false} showIndicators={false} showArrows={true} emulateTouch={true} swipeable={true} centerMode={true} centerSlidePercentage={80}>
+            {pages.map((page) => (
+              <div className="page-preview-details" key={page.id}>
+                <div className="page-preview-header">
+                  {page.icon}
+                  <h2>{page.title}</h2>
+                  <p>{page.description}</p>
+                  <Link href={page.url} legacyBehavior>
+                    <a className="button">Learn More</a>
+                  </Link>
+                </div>
               </div>
-              <p>{page.description}</p>
-              {/* display a brief description of the page */}
-              <Link href={page.url} legacyBehavior>
-                {/* create a link to navigate to the page */}
-                <a className="button">Learn More</a>
-              </Link>
-            </div>
-          ))}
+            ))}
+          </Carousel>
         </div>
       </div>
       <style jsx>{`
         .container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
+          max-width: 960px;
+          margin: 0 auto;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
         }
 
         h1 {
-          font-size: 48px;
+          font-size: 4rem;
           font-weight: 700;
-          margin-top: 100px;
-          margin-bottom: 50px;
+          margin-top: 3rem;
+          margin-bottom: 2rem;
           color: #292929;
         }
 
+        .carousel-wrapper {
+          border-radius: 5px;
+          box-shadow: -10px 0px 10px -10px rgba(0, 0, 0, 0.5),
+                       10px 0px 10px -10px rgba(0, 0, 0, 0.5); /* Add shadow to the sides of the carousel wrapper */
+        }
+        
+
         .page-preview-details {
-          width: calc((100% - 60px) / 3);
-          margin: 20px;
-          padding: 20px;
+          width: 100%;
+          margin: 1rem 0.5rem;
+          padding: 2rem;
           text-align: center;
           border: 1px solid #ccc;
           border-radius: 5px;
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+          background-color: #f5f5f5;
         }
-        
+
+        .page-preview-details:nth-child(2) {
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        }
+
         .page-preview-details h2 {
           margin-top: 0;
         }
-        
+
         .page-preview-details p {
           margin-bottom: 0;
         }
-        
-        .page-previews {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
 
         .button {
-          margin-top: 5px;
           display: inline-block;
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 700;
           color: #fff;
           background-color: #292929;
           text-decoration: none;
-          padding: 10px 20px;
+          padding: 1rem 2rem;
           border-radius: 5px;
           transition: all 0.3s ease;
+          max-width: 100%;
+          width: fit-content;
+          margin-top: 1rem;
         }
 
         .button:hover {
           background-color: #fff;
           color: #292929;
         }
+
+        .carousel .control-arrow {
+          background-color: #000;
+        }
+
+        .carousel .control-arrow:hover {
+          background-color: #000;
+        }
       `}</style>
     </Layout>
   );
 };
 
-export default Index;  // export the component as the default export of the module
+export default Index;
