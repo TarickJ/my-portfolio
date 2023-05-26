@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Footer from './Footer'
-import Header from './Header'
+import React from 'react';
+import Head from 'next/head';
+import Footer from './Footer';
+import Header from './Header';
 
 const Layout = ({ children }) => {
   return (
@@ -19,7 +20,7 @@ const Layout = ({ children }) => {
 
       {/* Adds the footer component */}
       <Footer />
-
+{/* styles */}
       <style jsx global>{`
         /* Global CSS styles */
         body {
@@ -42,13 +43,11 @@ const Layout = ({ children }) => {
 
         main {
           flex: 1;
-          margin-bottom: 60p
+          margin-bottom: 60px;
         }
-
-        
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
